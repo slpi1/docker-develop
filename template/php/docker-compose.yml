@@ -1,0 +1,30 @@
+version: '3'
+services:
+
+  redis:
+    build:
+      context: .
+      dockerfile: Dockerfile-redis
+    networks:
+      - laravel
+
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile-php
+    networks:
+      - laravel
+    
+  web:
+    build: 
+      context: .
+      dockerfile: Dockerfile-nginx
+    ports:
+      - "8080:80"
+    networks:
+      - laravel
+    depends_on:
+      - app
+
+networks:
+  laravel:

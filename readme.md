@@ -8,12 +8,12 @@
 
 |基础镜像|标准镜像|Dockerfile|定制说明|镜像地址|
 |---|---|---|---|---|
-|nginx:alpine|nginx|待完成|无||
-|php:7.2-fpm-alpine |php| [查看](standard/php/Dockerfile.alpine)|添加php常用扩展||
-|composer:latest|composer|待完成|无||
-|redis:4.0-alpine|redis|待完成|无||
-|mysql:5.7|mysql|待完成|无||
-|node:9-alpine|node|待完成|无||
+|nginx:alpine|nginx|[查看](standard/nginx/Dockerfile)|删除默认站点配置||
+|php:7.2-fpm-alpine |php|[查看](standard/php/Dockerfile.alpine)|添加php常用扩展||
+|composer:latest|composer|[查看](standard/composer/Dockerfile)|无||
+|redis:4.0-alpine|redis|[查看](standard/redis/Dockerfile)|无||
+|mysql:5.7|mysql|[查看](standard/mysql/Dockerfile)|无||
+|node:9-alpine|node|[查看](standard/node/Dockerfile)|无||
 
 标准镜像是经过部门标准化处理后的镜像，目的是为了去掉基础镜像所携带的版本号，简化镜像名称，同时也表名所运用的技术统一的立场。从基础镜像到标准镜像，会维护一套对应的Dockerfile，是根据具体需求所进行的定制化，在镜像标准化之后一般不对这部分的Dockerfile做更新。
 

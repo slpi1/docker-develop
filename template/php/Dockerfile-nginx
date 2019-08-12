@@ -1,0 +1,7 @@
+# 源镜像地址待确定
+FROM nginx
+
+ARG LARAVEL_PATH=/app
+
+COPY domain.conf /etc/nginx/conf.d/
+COPY public ${LARAVEL_PATH}/public
