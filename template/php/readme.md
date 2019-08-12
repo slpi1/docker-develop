@@ -31,4 +31,4 @@ nginx容器构建文件。主要是将domain.conf配置文件添加到nginx配�
 php容器构建文件。应用依赖安装，应用代码拷贝。
 
 # docker-compose.yml
-容器编排文件
+容器编排文件.

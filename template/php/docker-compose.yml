@@ -1,10 +1,27 @@
 version: '3'
 services:
 
+  mysql:
+    build:
+      context: .
+      dockerfile: Dockerfile-mysql
+    restart: always
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    networks:
+      - localhost
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+    #映射宿主机的数据目录到容器
+    #volumes:
+    #  - /my_data:/var/lib/mysql
+
   redis:
     build:
       context: .
       dockerfile: Dockerfile-redis
+    restart: always
     networks:
       - laravel
 
@@ -12,6 +29,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile-php
+    restart: always
     networks:
       - laravel
     
@@ -19,6 +37,7 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile-nginx
+    restart: always
     ports:
       - "8080:80"
     networks:

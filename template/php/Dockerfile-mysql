@@ -1,2 +1,2 @@
 # 源镜像地址待确定
-FROM redis
+FROM mysql
