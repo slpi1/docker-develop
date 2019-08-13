@@ -5,4 +5,4 @@ RUN apk add tzdata curl \
     && echo "Asia/Shanghai" > /etc/timezone \    
     && apk del \
         tzdata\
-        curl \
+        curl

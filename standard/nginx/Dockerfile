@@ -7,4 +7,4 @@ RUN rm -f /etc/nginx/conf.d/default.conf \
     && echo "Asia/Shanghai" > /etc/timezone \
     && apk del \
         tzdata\
-        curl \
+        curl
