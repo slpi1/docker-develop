@@ -3,6 +3,11 @@
 
 FROM php:7.2-fpm
 
+
+RUN set -eux; \
+    ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime; \
+    echo "Asia/Shanghai"> /etc/timezone
+
 RUN docker-php-source extract \
 
     ## imagick

@@ -8,14 +8,14 @@
 
 |基础镜像|标准镜像|Dockerfile|定制说明|镜像地址|
 |---|---|---|---|---|
-|nginx:alpine|nginx|[查看](standard/nginx/)|删除默认站点配置|harbor.uuzu.com/information/nginx:alpine |
-|php:7.2-fpm-alpine |php|[查看](standard/php/)|添加php常用扩展|harbor.uuzu.com/information/php:7.2-fpm-alpine |
+|nginx:alpine|nginx|[查看](standard/nginx/)|删除默认站点配置,矫正时区|harbor.uuzu.com/information/nginx:alpine |
+|php:7.2-fpm-alpine |php|[查看](standard/php/)|添加php常用扩展,矫正时区|harbor.uuzu.com/information/php:7.2-fpm-alpine |
 |composer:latest|composer|[查看](standard/composer/)|无|harbor.uuzu.com/information/composer:latest |
-|redis:4.0-alpine|redis|[查看](standard/redis/)|无|harbor.uuzu.com/information/redis:4.0-alpine|
-|mysql:5.7|mysql|[查看](standard/mysql/)|无|harbor.uuzu.com/information/mysql:5.7|
-|node:8.16-alpine|node|[查看](standard/node/)|无|harbor.uuzu.com/information/node:8.16-alpine|
-|tomcat:8-jdk8-openjdk-slim|tomcat|[查看](standard/tomcat/)|无|harbor.uuzu.com/information/tomcat:8-jdk8-openjdk-slim|
-|openjdk:8-jdk-slim|openjdk|[查看](standard/openjdk/)|无|harbor.uuzu.com/information/openjdk:8-jdk-slim|
+|redis:4.0-alpine|redis|[查看](standard/redis/)|矫正时区|harbor.uuzu.com/information/redis:4.0-alpine|
+|mysql:5.7|mysql|[查看](standard/mysql/)|矫正时区|harbor.uuzu.com/information/mysql:5.7|
+|node:8.16-alpine|node|[查看](standard/node/)|矫正时区|harbor.uuzu.com/information/node:8.16-alpine|
+|tomcat:8-jdk8-openjdk-slim|tomcat|[查看](standard/tomcat/)|矫正时区|harbor.uuzu.com/information/tomcat:8-jdk8-openjdk-slim|
+|openjdk:8-jdk-slim|openjdk|[查看](standard/openjdk/)|矫正时区|harbor.uuzu.com/information/openjdk:8-jdk-slim|
 
 标准镜像是经过部门标准化处理后的镜像，目的是为了去掉基础镜像所携带的版本号，简化镜像名称，同时也表名所运用的技术统一的立场。从基础镜像到标准镜像，会维护一套对应的Dockerfile，是根据具体需求所进行的定制化，在镜像标准化之后一般不对这部分的Dockerfile做更新。
 
