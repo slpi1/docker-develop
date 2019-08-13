@@ -1,6 +1,8 @@
 # php镜像制作说明
 
-php的镜像提供两个版本，具体差异查看Dockerfile。
+php的镜像提供两个版本，具体差异查看Dockerfile:
+- [php:7.2-fpm](./Dockerfile)
+- [php:7.2-fpm-alpine](./Dockerfile.alpine)
 
 官方提供的基础镜像包含以下扩展：
 ```
@@ -39,7 +41,7 @@ xmlwriter
 zlib
 ```
 
-需要新增下列扩展
+本次构建会新增下列扩展：
 
 ```
 bcmath

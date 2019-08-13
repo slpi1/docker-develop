@@ -8,37 +8,49 @@ RUN  docker-php-source extract \
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo "Asia/Shanghai" > /etc/timezone \
     && apk --update --repository=http://dl-4.alpinelinux.org/alpine/edge/testing add \
-        php7-common \
-        php7-intl \
-        php7-gd \
-        php7-mcrypt \
-        php7-gmp \
-        php7-zip \
-        php7-mysqli \
-        php7-bcmath \
-        php7-pdo_mysql \
-        php7-gettext \
-        php7-xmlrpc \
-        php7-bz2 \
-        php7-fpm \
         curl \
         freetype \
         freetype-dev \
+        bzip2-dev \
+        gmp-dev \
+        gettext-dev \
+        imap-dev \
         libpng \
+        icu-dev \
         libpng-dev \
         libjpeg-turbo \
         libjpeg-turbo-dev \
+        openldap-dev \
+        libxml2-dev \
+        libxslt-dev\
     && mkdir -p /usr/src/php/ext/redis \
     && curl -L https://github.com/phpredis/phpredis/archive/3.1.4.tar.gz | tar xvz -C /usr/src/php/ext/redis --strip 1 \
     && echo 'redis' >> /usr/src/php-available-exts \
-    && docker-php-ext-install -j$(nproc) exif redis pdo pdo_mysql mysqli zip \
+    && docker-php-ext-install -j$(nproc) \
+        bz2 \
+        bcmath \
+        calendar \
+        exif \
+        gmp \
+        gettext \
+        imap \
+        intl \
+        ldap \
+        redis \
+        opcache \
+        pdo \
+        pdo_mysql \
+        mysqli \
+        soap \
+        sockets \
+        xmlrpc \
+        zip \
+        xsl \
     && docker-php-ext-configure gd \
         --with-freetype-dir=/usr/include/ \
         --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install -j$(nproc) gd \
     && apk del \
-        freetype-dev \
-        libpng-dev \
-        libjpeg-turbo-dev \
+        curl \
     && rm /var/cache/apk/* \
     && docker-php-source delete

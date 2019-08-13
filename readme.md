@@ -8,12 +8,12 @@
 
 |基础镜像|标准镜像|Dockerfile|定制说明|镜像地址|
 |---|---|---|---|---|
-|nginx:alpine|nginx|[查看](standard/nginx/Dockerfile)|删除默认站点配置||
-|php:7.2-fpm-alpine |php|[查看](standard/php/Dockerfile.alpine)|添加php常用扩展||
-|composer:latest|composer|[查看](standard/composer/Dockerfile)|无||
-|redis:4.0-alpine|redis|[查看](standard/redis/Dockerfile)|无||
-|mysql:5.7|mysql|[查看](standard/mysql/Dockerfile)|无||
-|node:9-alpine|node|[查看](standard/node/Dockerfile)|无||
+|nginx:alpine|nginx|[查看](standard/nginx/readme.md)|删除默认站点配置||
+|php:7.2-fpm-alpine |php|[查看](standard/php/readme.md)|添加php常用扩展||
+|composer:latest|composer|[查看](standard/composer/readme.md)|无||
+|redis:4.0-alpine|redis|[查看](standard/redis/readme.md)|无||
+|mysql:5.7|mysql|[查看](standard/mysql/readme.md)|无||
+|node:8.16-alpine|node|[查看](standard/node/readme.md)|无||
 
 标准镜像是经过部门标准化处理后的镜像，目的是为了去掉基础镜像所携带的版本号，简化镜像名称，同时也表名所运用的技术统一的立场。从基础镜像到标准镜像，会维护一套对应的Dockerfile，是根据具体需求所进行的定制化，在镜像标准化之后一般不对这部分的Dockerfile做更新。
 
@@ -29,5 +29,14 @@
 - 定义php运行容器，拷贝应用代码到容器，拷贝php依赖到容器
 - 定义nginx运行容器，配置应用站点，拷贝应用入口文件及前端静态资源文件到容器
 
+### 应用模板
+
+|应用类型|说明|
+|---|---|
+|php后端项目|[查看](./template/php/readme.md)|
+|node前端项目|[查看](./template/node/readme.md)|
+
 ### 应用的构建
 docker可以根据应用的Dockerfile创建相应的容器，但还需要额外的工作来保证容器间的协作。通过Dockerfile创建容器并运行，得到应用能正常运行的环境，就是构建的过程。这一过程需要`.gitlab-ci.yml/docker-compose.yml`等文件来保证。
+
+## 常见问题

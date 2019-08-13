@@ -6,6 +6,8 @@
 - Dockerfile-php: php容器构建文件。
 - docker-compose.yml: 容器编排文件。
 
+**构建过程会根据项目具体情况而有所差异。**
+
 # domain.conf
 
 站点配置文件中需要注意fastcgi_pass配置的值与docker-compose.yml中的服务名保持一致:
