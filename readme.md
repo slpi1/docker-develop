@@ -45,4 +45,5 @@ docker可以根据应用的Dockerfile创建相应的容器，但还需要额外�
 ### demo
 在安装好docker环境之后，通过clone本项目，进入demo项目目录，执行 `docker-compose up -d` 体验。
 
-## 常见问题
+## FAQ
+- [laravel应用中如何运行计划任务及队列？](./faq/laravel-cron-queue.md)
