@@ -8,7 +8,7 @@
 
 |基础镜像|标准镜像|Dockerfile|定制说明|镜像地址|
 |---|---|---|---|---|
-|nginx:alpine|nginx|[查看](standard/nginx/)|删除默认站点配置,矫正时区|harbor.uuzu.com/information/nginx:alpine |
+|nginx:alpine|nginx|[查看](standard/nginx/)|矫正时区|harbor.uuzu.com/information/nginx:alpine |
 |php:7.2-fpm-alpine |php|[查看](standard/php/)|添加php常用扩展,矫正时区|harbor.uuzu.com/information/php:7.2-fpm-alpine |
 |composer:latest|composer|[查看](standard/composer/)|无|harbor.uuzu.com/information/composer:latest |
 |redis:4.0-alpine|redis|[查看](standard/redis/)|矫正时区|harbor.uuzu.com/information/redis:4.0-alpine|
