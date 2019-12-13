@@ -1,0 +1,15 @@
+FROM php:7.2-cli-alpine
+
+RUN echo 'memory_limit = 512M' >> /usr/local/etc/php/conf.d/docker-php-memlimit.ini
+RUN apk --update --repository=http://dl-4.alpinelinux.org/alpine/edge/testing add \
+        m4 \
+        autoconf \
+        gcc \
+        make \
+        g++ \
+        linux-headers \
+        libc-dev
+RUN pecl install swoole 
+RUN docker-php-ext-enable swoole
+RUN rm -rf /var/cache/apk/*
+CMD ["php","-m"]
