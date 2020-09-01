@@ -1,4 +1,4 @@
-# 信息化中心 - docker基础镜像
+# docker基础镜像
 
 ## 概述
 本项目记录信息化中容器化实践过程中的问题。
@@ -6,16 +6,6 @@
 ## 镜像
 出于统一应用的运行时环境、便于维护管理环境的目的，在实践过程中，产生的每个镜像，尽可能的源于同一个稳定的开源的镜像。在定义好所需要的基础镜像后，维护一套在部门层面统一通用镜像。
 
-|基础镜像|标准镜像|Dockerfile|定制说明|镜像地址|
-|---|---|---|---|---|
-|nginx:alpine|nginx|[查看](standard/nginx/)|矫正时区|harbor.uuzu.com/information/nginx:alpine |
-|php:7.2-fpm-alpine |php|[查看](standard/php/)|添加php常用扩展,矫正时区|harbor.uuzu.com/information/php:7.2-fpm-alpine |
-|composer:latest|composer|[查看](standard/composer/)|无|harbor.uuzu.com/information/composer:latest |
-|redis:4.0-alpine|redis|[查看](standard/redis/)|矫正时区|harbor.uuzu.com/information/redis:4.0-alpine|
-|mysql:5.7|mysql|[查看](standard/mysql/)|矫正时区|harbor.uuzu.com/information/mysql:5.7|
-|node:8.16-alpine|node|[查看](standard/node/)|矫正时区|harbor.uuzu.com/information/node:8.16-alpine|
-|tomcat:8-jdk8-openjdk-slim|tomcat|[查看](standard/tomcat/)|矫正时区|harbor.uuzu.com/information/tomcat:8-jdk8-openjdk-slim|
-|openjdk:8-jdk-slim|openjdk|[查看](standard/openjdk/)|矫正时区|harbor.uuzu.com/information/openjdk:8-jdk-slim|
 
 标准镜像是经过部门标准化处理后的镜像，目的是为了去掉基础镜像所携带的版本号，简化镜像名称，同时也表名所运用的技术统一的立场。从基础镜像到标准镜像，会维护一套对应的Dockerfile，是根据具体需求所进行的定制化，在镜像标准化之后一般不对这部分的Dockerfile做更新。
 

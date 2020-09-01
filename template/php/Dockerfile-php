@@ -1,4 +1,4 @@
-FROM harbor.uuzu.com/information/composer:latest as composer
+FROM harbor.slpi1.com/information/composer:latest as composer
 
 COPY database/ /app/database/
 COPY composer.json /app/
@@ -13,7 +13,7 @@ RUN cd /app \
            --prefer-dist
 
 # 源镜像地址待确定
-FROM harbor.uuzu.com/information/php:7.2-fpm-alpine
+FROM harbor.slpi1.com/information/php:7.2-fpm-alpine
 
 ARG LARAVEL_PATH=/app
 

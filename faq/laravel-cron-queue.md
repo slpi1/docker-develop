@@ -14,14 +14,14 @@
 如果借助已有的php-fpm容器来运行，理论上是可行的，但是如果应用需要被部署多套，那么多个php-fpm的容器中都会有crond的进程，可能会导致任务重复运行，所以我们应该通过第二个思路来进行。
 
 ## 实施过程
-我们需要再构建一个queue的容器，来运行计划任务及队列，容器中需要包含php的运行环境，所以该容器的镜像，可以基于 `harbor.uuzu.com/information/php:7.2-fpm-alpine`。容器执行计划脚本，需要更新crontab的计划；容器需要运行队列，一般通过supervisor来管理队列运行进程。需要注意的是，通过上述分析，我们知道该容器中实际上需要运行两个进程，一个是crond，一个是supervisord，解决这个问题也有两个办法：
+我们需要再构建一个queue的容器，来运行计划任务及队列，容器中需要包含php的运行环境，所以该容器的镜像，可以基于 `harbor.slpi1.com/information/php:7.2-fpm-alpine`。容器执行计划脚本，需要更新crontab的计划；容器需要运行队列，一般通过supervisor来管理队列运行进程。需要注意的是，通过上述分析，我们知道该容器中实际上需要运行两个进程，一个是crond，一个是supervisord，解决这个问题也有两个办法：
 - 指定 `ENTRYPOINT` 文件，在其中启动两个进程
 - 通过supervisord来启动crond
 
 我们选择通过supercisord来启动crond，据此，我们编写出的Dockerfile如下：
 
 ```
-FROM harbor.uuzu.com/information/php:7.2-fpm-alpine
+FROM harbor.slpi1.com/information/php:7.2-fpm-alpine
 
 RUN \
     # 这里加入计划任务

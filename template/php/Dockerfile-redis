@@ -1,1 +1,1 @@
-FROM harbor.uuzu.com/information/redis:4.0-alpine
+FROM harbor.slpi1.com/information/redis:4.0-alpine

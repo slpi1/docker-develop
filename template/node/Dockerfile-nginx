@@ -1,5 +1,5 @@
 # 一、 构建node编译容器
-FROM harbor.uuzu.com/information/node:10.16-alpine as frontend
+FROM harbor.slpi1.com/information/node:10.16-alpine as frontend
 
 # 1. 拷贝代码到node容器
 COPY . /app/
@@ -12,7 +12,7 @@ RUN npm install --registry=https://registry.npm.taobao.org \
     && npm run build
 
 # 二、 构建运行容器
-FROM harbor.uuzu.com/information/nginx:alpine as nginx
+FROM harbor.slpi1.com/information/nginx:alpine as nginx
 
 # 1. 注入站点配置文件
 COPY domain.conf /etc/nginx/conf.d/default.conf
